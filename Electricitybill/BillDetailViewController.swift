@@ -7,12 +7,17 @@
 //
 
 import UIKit
+protocol Passdataprotocol {
+    func settotal(totalbill : Double)
+}
 
 class BillDetailViewController: UIViewController {
     @IBOutlet weak var txtcustomername: UILabel!
     @IBOutlet weak var txttotalbill: UILabel!
     @IBOutlet weak var txtgender: UILabel!
-    var electricitybill : ElectricityBill!
+    
+    var electricitybill : ElectricityBill?
+    var delegate : Passdataprotocol?
 
     
     override func viewDidLoad() {
@@ -24,9 +29,9 @@ class BillDetailViewController: UIViewController {
             print(bill.customername!)
             calculateTotalBillAmount()
             
-        self.txtcustomername.text = electricitybill.customername
-            self.txtgender.text = electricitybill.gender?.rawValue
-            self.txttotalbill.text = String(format: "Total: %.2f",  electricitybill.totalbillamount!)
+            self.txtcustomername.text = electricitybill?.customername
+            self.txtgender.text = electricitybill?.gender?.rawValue
+            self.txttotalbill.text = String(format: "Total: %.2f",  (electricitybill?.totalbillamount!)!)
         }
         
     }
@@ -53,7 +58,8 @@ class BillDetailViewController: UIViewController {
         {
             totalBill = 612.5 + (Double((electricitybill?.unitconsumed)!) - 450) * 2.25
         }
-        electricitybill.totalbillamount = totalBill
+        delegate?.settotal(totalbill : totalBill)
+        electricitybill?.totalbillamount = totalBill
         print(totalBill)
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ElectricityBillViewController: UIViewController {
+class ElectricityBillViewController: UIViewController , Passdataprotocol {
     
     @IBOutlet weak var txtcustomerid: UITextField!
     @IBOutlet weak var txtcustomername: UITextField!
@@ -16,13 +16,15 @@ class ElectricityBillViewController: UIViewController {
     @IBOutlet weak var date: UIDatePicker!
     @IBOutlet weak var txtunit: UITextField!
     
+    @IBOutlet weak var txtbillamount: UILabel!
+    
     var electricitybill : ElectricityBill!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     self.navigationItem.title = "Bill data entry"
-    }
+           }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,11 +42,16 @@ class ElectricityBillViewController: UIViewController {
     if let destVC = segue.destination as? BillDetailViewController {
         print("#####  \(electricitybill)")
          destVC.electricitybill = electricitybill
+        destVC.delegate = self
         }
     }
     
     
-    
+    func settotal(totalbill: Double) {
+        print("a =  class \(totalbill)")
+        txtbillamount.text = "Total Bill: $\(totalbill)"
+        
+    }
     
     
     

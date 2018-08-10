@@ -85,7 +85,7 @@ CiAgICA
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eaO-di-IDi">
                                 <rect key="frame" x="25" y="213" width="243" height="30"/>
@@ -162,7 +162,7 @@ CiAgICA
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84V-yk-RLN">
-                                <rect key="frame" x="127" y="343" width="88" height="30"/>
+                                <rect key="frame" x="135" y="411" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Calculate Bill"/>
                                 <connections>
@@ -176,14 +176,22 @@ CiAgICA
                                     <!--2018-08-09 01:16:11 +0000-->
                                 </date>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4VE-Zq-SRn">
+                                <rect key="frame" x="86" y="358" width="190" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.77314913171150035" blue="0.086034575746395392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="280-60-iOt"/>
                     </view>
                     <navigationItem key="navigationItem" title="Electricity Bill" id="19E-sE-4xH"/>
                     <connections>
                         <outlet property="date" destination="zOs-cx-N99" id="Dms-py-yrf"/>
                         <outlet property="opgender" destination="4B8-4S-Axd" id="j32-4k-Bbj"/>
+                        <outlet property="txtbillamount" destination="4VE-Zq-SRn" id="PmX-pC-ytn"/>
                         <outlet property="txtcustomerid" destination="na5-1O-RoX" id="xCR-r5-PVZ"/>
                         <outlet property="txtcustomername" destination="tlN-vk-TuN" id="0zh-Pl-FAY"/>
                         <outlet property="txtunit" destination="UJs-yh-hw6" id="0Dp-dP-E4l"/>
@@ -224,20 +232,20 @@ CiAgICA
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Bill Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZD6-2A-rdz">
-                                <rect key="frame" x="128" y="81" width="119" height="21"/>
+                                <rect key="frame" x="128" y="96" width="119" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.13505172758705042" green="1" blue="0.99135670986347213" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="fzj-zg-aNI"/>
                     </view>
                     <connections>
-                        <outlet property="txtcustomername" destination="U7G-Xa-SQh" id="CaN-vd-Yin"/>
-                        <outlet property="txtgender" destination="feM-Io-3lK" id="5uw-GF-8yi"/>
-                        <outlet property="txttotalbill" destination="CvY-qX-O6R" id="Ea6-Ki-BQt"/>
+                        <outlet property="txtcustomername" destination="U7G-Xa-SQh" id="E53-rw-UEB"/>
+                        <outlet property="txtgender" destination="CvY-qX-O6R" id="EYE-bQ-zuL"/>
+                        <outlet property="txttotalbill" destination="feM-Io-3lK" id="q2b-jt-w8m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaD-Ry-0WK" userLabel="First Responder" sceneMemberID="firstResponder"/>
