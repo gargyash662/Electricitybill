@@ -81,7 +81,7 @@ CiAgICA
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bpO-d9-ob8">
-                                <rect key="frame" x="25" y="318" width="236" height="30"/>
+                                <rect key="frame" x="25" y="318" width="243" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -95,19 +95,34 @@ CiAgICA
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIb-r1-QGP">
-                                <rect key="frame" x="87" y="414" width="181" height="30"/>
+                                <rect key="frame" x="87" y="447" width="181" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="btnlogin:" destination="87X-WD-fN2" eventType="touchUpInside" id="cAY-Ql-z8u"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fhi-Kx-O8o">
+                                <rect key="frame" x="25" y="367" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="1" green="0.055208963119074195" blue="0.12601885276941394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.94147318483993325" green="0.56036826019827091" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remember Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btC-DU-sKF">
+                                <rect key="frame" x="100" y="372" width="168" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="1" green="0.24807261793506941" blue="0.8034295187458923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.55911371539117272" blue="0.21670226694555472" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="mCU-Ph-DTc"/>
                     </view>
                     <connections>
                         <outlet property="password" destination="bpO-d9-ob8" id="pBB-tv-I6g"/>
+                        <outlet property="switchremember" destination="fhi-Kx-O8o" id="wpV-yO-2FX"/>
+                        <outlet property="switchrememberme" destination="fhi-Kx-O8o" id="DgW-Do-tBa"/>
                         <outlet property="txtusername" destination="eaO-di-IDi" id="cXs-35-cOU"/>
                         <segue destination="2RI-7F-RMg" kind="show" identifier="ElectricityBillViewController" id="Y3x-Yj-cuP"/>
                     </connections>
