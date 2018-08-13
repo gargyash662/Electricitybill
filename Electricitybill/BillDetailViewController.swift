@@ -12,6 +12,7 @@ protocol Passdataprotocol {
 }
 
 class BillDetailViewController: UIViewController {
+    @IBOutlet weak var email: UILabel!
     @IBOutlet weak var txtcustomername: UILabel!
     @IBOutlet weak var txttotalbill: UILabel!
     @IBOutlet weak var txtgender: UILabel!

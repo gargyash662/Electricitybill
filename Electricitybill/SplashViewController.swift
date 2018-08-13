@@ -19,7 +19,7 @@ class SplashViewController: UIViewController {
 
     @objc func shownavcontroller()
     {
-        performSegue(withIdentifier: "showloginscreen", sender: self)
+        performSegue(withIdentifier: "LoginScreenViewController", sender: self)
     }
     override func didReceiveMemoryWarning()
     {

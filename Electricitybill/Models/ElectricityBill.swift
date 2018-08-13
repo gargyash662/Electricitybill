@@ -20,4 +20,5 @@ struct ElectricityBill
     var billdate : Date?
     var unitconsumed : Int?
     var totalbillamount: Double?
+    var email : String?
 }
