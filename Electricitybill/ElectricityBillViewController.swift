@@ -17,7 +17,7 @@ class ElectricityBillViewController: UIViewController , UITextFieldDelegate ,  P
     @IBOutlet weak var txtunit: UITextField!
     @IBOutlet weak var txtbillamount: UILabel!
     @IBOutlet weak var emailid: UITextField!
-    
+    var genderif : String?
     @IBAction func genderSegment(_ sender: UISegmentedControl)
     {
        switch (opgender.selectedSegmentIndex) {
@@ -26,9 +26,12 @@ class ElectricityBillViewController: UIViewController , UITextFieldDelegate ,  P
             
         case 1:
             electricitybill.gender = Gender(rawValue: "Female")
+       case 2:
+        electricitybill.gender = Gender(rawValue: "Other")
         default:
             break
         }
+        genderif = electricitybill.gender!.rawValue
         //return electricitybill.gender!.rawValue
     }
     var electricitybill : ElectricityBill!
@@ -94,7 +97,7 @@ class ElectricityBillViewController: UIViewController , UITextFieldDelegate ,  P
         
         electricitybill.customerID = Int(txtcustomerid.text!)
         electricitybill.customername = txtcustomername.text!
-        electricitybill.gender = Gender(rawValue: electricitybill.gender!.rawValue)
+        electricitybill.gender = Gender(rawValue: genderif!)
 //        electricitybill.gender = Gender.getgender(value:opgender.selectedsegmentIndex)
         electricitybill.billdate = Date()
         electricitybill.unitconsumed = Int(txtunit.text!)

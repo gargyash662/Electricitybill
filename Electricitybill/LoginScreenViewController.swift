@@ -40,7 +40,7 @@ class LoginScreenViewController: UIViewController
     
     @IBAction func btnlogin(_ sender: Any)
     {
-        if txtusername.text?.elementsEqual("admin") == true  && password.text?.elementsEqual("password") == true
+        if txtusername.text?.elementsEqual("admin") == true  && password.text?.elementsEqual("admin@123") == true
         {
             if switchremember.isOn
             {
@@ -55,7 +55,10 @@ class LoginScreenViewController: UIViewController
             performSegue(withIdentifier: "ElectricityBillViewController", sender: self)
 
         } else {
-            print("error")
+            let myAlert = UIAlertController(title: "Who is this?", message: "UserName/Password Incorrect", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.default, handler: nil)
+            myAlert.addAction(okAction)
+            self.present(myAlert,animated: true, completion: nil)
         }
     }
     
