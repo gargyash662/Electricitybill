@@ -18,20 +18,21 @@ class ElectricityBillViewController: UIViewController , UITextFieldDelegate ,  P
     @IBOutlet weak var txtbillamount: UILabel!
     @IBOutlet weak var emailid: UITextField!
     var genderif : String?
+    
     @IBAction func genderSegment(_ sender: UISegmentedControl)
     {
        switch (opgender.selectedSegmentIndex) {
         case 0:
-            electricitybill.gender = Gender(rawValue: "Male")
+            electricitybill?.gender = Gender(rawValue: "Male")
             
         case 1:
-            electricitybill.gender = Gender(rawValue: "Female")
+            electricitybill?.gender = Gender(rawValue: "Female")
        case 2:
-        electricitybill.gender = Gender(rawValue: "Other")
+        electricitybill?.gender = Gender(rawValue: "other")
         default:
             break
         }
-        genderif = electricitybill.gender!.rawValue
+        //genderif = electricitybill.gender!
         //return electricitybill.gender!.rawValue
     }
     var electricitybill : ElectricityBill!
@@ -42,6 +43,7 @@ class ElectricityBillViewController: UIViewController , UITextFieldDelegate ,  P
         self.lbldate.delegate = self
         
     self.navigationItem.title = "Bill data entry"
+        _ = UITapGestureRecognizer(target: self, action: #selector(ElectricityBillViewController.viewTapped(gestureRecognizer:)))
            }
     
     override func didReceiveMemoryWarning() {
@@ -97,7 +99,17 @@ class ElectricityBillViewController: UIViewController , UITextFieldDelegate ,  P
         
         electricitybill.customerID = Int(txtcustomerid.text!)
         electricitybill.customername = txtcustomername.text!
-        electricitybill.gender = Gender(rawValue: genderif!)
+        if opgender.selectedSegmentIndex == 0
+        {
+            electricitybill.gender = Gender.MALE
+        }else if opgender.selectedSegmentIndex == 1
+        {
+            electricitybill.gender = Gender.FEMALE
+        } else if opgender.selectedSegmentIndex == 2
+        {
+            electricitybill.gender = Gender.OTHER
+        }
+        
 //        electricitybill.gender = Gender.getgender(value:opgender.selectedsegmentIndex)
         electricitybill.billdate = Date()
         electricitybill.unitconsumed = Int(txtunit.text!)
@@ -107,6 +119,10 @@ class ElectricityBillViewController: UIViewController , UITextFieldDelegate ,  P
        // electricityBill.gender = Gender.getgender(value: segGender.selectedsegmentIndex
         performSegue(withIdentifier: "seguebilldetails", sender: self)
         }
+    
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer)  {
+        view.endEditing(true)
+    }
     
   override  func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let destVC = segue.destination as? BillDetailViewController {

@@ -31,7 +31,7 @@ class BillDetailViewController: UIViewController {
             calculateTotalBillAmount()
             
             self.txtcustomername.text = electricitybill?.customername
-            self.txtgender.text = electricitybill?.gender?.rawValue
+           // self.txtgender.text = electricitybill?.gender
             self.txttotalbill.text = String(format: "Total: %.2f",  (electricitybill?.totalbillamount!)!)
         }
         
